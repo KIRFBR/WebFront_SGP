@@ -1,0 +1,36 @@
+#menu{
+    font-size: 24px;
+    margin-top: 50px;    
+}
+
+hr{
+    height: 3px;
+    background-color: #2b354e;
+    border: none;
+}
+
+#botao_adicionar{
+    margin-top: 30px;
+}
+
+.btn, .btn-primary{
+    background-color: #2b354e !important;
+}
+
+.modal-content{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.modal-header {
+    background-color: #2b354e;
+}
+
+.form_organizacao{
+    display: inline-block !important;
+    width: 50% !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
