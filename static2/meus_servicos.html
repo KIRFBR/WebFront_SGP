@@ -1,0 +1,118 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./Bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./meusServicosService.js"></script>
+    <link href="./Font-Awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./Bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./app.css" rel="stylesheet" type="text/css">
+  </head><body onload="findMyServices()">
+    <div class="navbar navbar-default navbar-static-top" margin="">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img alt="Brand" src="./img/sgp.jpg" height="100"></a>
+        </div>
+        <idiv class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-left" id="menu">
+            <li class="">
+              <a href="./index.html"><i class="fa fa-star fa-fw"></i>Clientes</a>
+            </li>
+            <li class="">
+              <a href="./servicos.html"><i class="fa fa-star fa-fw"></i>Serviços</a>
+            </li>
+            <li class="">
+              <a href="./meus_servicos.html""><i class="fa fa-star fa-fw"></i>Meus Serviços</a>
+            </li>
+          </ul>
+        </idiv>
+      </div>
+    </div>
+    <div class="section" id="botao_adicionar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#addMyService"  id="link_NewMyServices"><i class="fa fa-star fa-fw"></i>Adicionar Meu Serviço</a>
+          </div>
+        </div>
+        
+        <!-- Modal addService-->
+        <div class="modal fade" id="addMyService">
+          <div class="modal-dialog-centered modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header modalbackground">
+                      <h4 class="modal-title col-12 text-center textFont" style="color:white;">Meu Serviço</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div style="margin: 20px 0px 20px 0px">
+                      <div class="modalInputBox ">
+                        
+                            <div class="form-group">
+                              <label><h5 class="modalText">Cliente</h5></label>
+                              <select class="custom-select form-control modalForm smallinput" id="inputGroupSelectClient" aria-describedby="sizing-addon2">
+                                <option selected>Vazio</option>
+                                <option value="1">Um</option>
+                                <option value="2">Dois</option>
+                                <option value="3">Três</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label><h5 class="modalText">Servico</h5></label>
+                              <select class="custom-select form-control modalForm smallinput" id="inputGroupSelectService" aria-describedby="sizing-addon2">
+                                <option selected>Vazio</option>
+                                <option value="1">Um</option>
+                                <option value="2">Dois</option>
+                                <option value="3">Três</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                                <label><h5 class="modalText">N° de parcelas</h5></label>
+                                <input id="inputQtdeParcela" type="number" step="0.01" name="quantity" min="0.01" class="form-control modalForm smallinput" aria-describedby="sizing-addon2"></div>
+                            <div class="form-group">
+                                <label><h5 class="modalText">Preço total</h5></label>
+                                <input id="inputPrecoTotal" type="number" step="0.01" name="quantity" min="0.01" class="form-control modalForm smallinput" aria-describedby="sizing-addon2"></div>
+                            <div class="form-group">
+                                <label><h5 class="modalText">Data de vencimento</h5></label>
+                                <input id="inputDtVenc" type="date"  name="quantity" class="form-control modalForm smallinput" aria-describedby="sizing-addon2"></div>
+                            <div class="form-group">
+                                <label><h5 class="modalText">Data de pagamento</h5></label>
+                                <input id="inputDtPag" type="date" name="quantity" class="form-control modalForm smallinput" aria-describedby="sizing-addon2"></div>
+                            <div class="form-group">
+                                <label><h5 class="modalText">Observações</h5></label>
+                                <input id="inputObs" type="textarea" class="form-control modalForm smallinput" aria-describedby="sizing-addon2"></div>
+
+                            <div class="text-center"> <button type="button" class="btn btn-default modalbackground textFont" style="margin-right: 10px; color:white;" onclick="addMyService();">CADASTRAR</button>
+                            </div>
+                      </div>
+                  </div>
+                  <!-- Modal footer -->
+
+              </div>
+          </div>
+        </div>
+        <!-- Fim Modal addService-->
+      
+      </div>
+    </div>
+    
+    <!--Container que receberá listagem de serviços-->
+    <div class="container">
+      <ul class="list-group-flush" id="listaMyServices">
+      </ul>
+      <div id="removerItensChecados">
+      </div>
+    </div>    
+  
+
+</body></html>
